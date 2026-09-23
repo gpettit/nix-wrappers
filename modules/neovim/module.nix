@@ -65,16 +65,7 @@
 
         config.specs.nvim-treesitter = {
             data = with pkgs.vimPlugins; [
-                nvim-treesitter-textobjects
-                (nvim-treesitter .withPlugins (ps: with ps; [ 
-                    c
-                    lua
-                    markdown
-                    python
-                    rust
-                    nix
-                    bash
-                ]))
+                nvim-treesitter.withAllGrammars
             ];
             runtimePkgs = with pkgs; [
                 tree-sitter
